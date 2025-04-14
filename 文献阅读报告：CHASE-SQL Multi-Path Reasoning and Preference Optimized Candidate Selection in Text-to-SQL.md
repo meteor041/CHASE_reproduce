@@ -399,7 +399,7 @@ AND (schools.`SOCType` = 'High Schools (Public)'))
 
 ---
 
-![query fixing method](<文献阅读报告：CHASE-SQL Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL/image-4.png>)
+![query fixing method](<文献阅读报告：CHASE-SQL Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL/image-5.png>)
 
 ---
 
@@ -427,7 +427,7 @@ $c_f=\text{argmax}\left (\mathop\sum\limits^{\binom{n}{k}}_{i=1}\theta_p(c_{i1},
 
 ---
 
-![选择代理机制算法](<文献阅读报告：CHASE-SQL Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL/image-5.png>)
+![选择代理机制算法](<文献阅读报告：CHASE-SQL Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL/image-4.png>)
 
 ---
 
