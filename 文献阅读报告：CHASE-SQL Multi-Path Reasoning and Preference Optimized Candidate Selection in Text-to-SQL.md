@@ -391,7 +391,7 @@ AND (schools.`SOCType` = 'High Schools (Public)'))
 ---
 
 <!-- _class: center -->
-### 2.4 基于自反思机制的查询修正器
+### 2.4 基于自反思机制的查询修正器(Query Fixer)
 
 - 修正器不需要Oracle result, 它会对先前生成的查询进行反思，并利用语法错误详情或空结果集等反馈信息来指导修正过程。
 - 迭代修正方法持续应用至预设的尝试次数β（本文设为3次）。
@@ -399,7 +399,12 @@ AND (schools.`SOCType` = 'High Schools (Public)'))
 
 ---
 
+![query fixing method](<文献阅读报告：CHASE-SQL Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL/image-4.png>)
+
+---
+
 <!-- _class: center -->
+
 ### 2.5 选择代理机制
 
 选择代理通过两两比较候选查询，基于分类目标训练的模型为候选打分。具体步骤包括：
@@ -419,6 +424,10 @@ AND (schools.`SOCType` = 'High Schools (Public)'))
 $c_f=\text{argmax}\left (\mathop\sum\limits^{\binom{n}{k}}_{i=1}\theta_p(c_{i1},\cdots,c_{ik}|Q_u,H_u,D)\right)$
 
 </div>
+
+---
+
+![选择代理机制算法](<文献阅读报告：CHASE-SQL Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL/image-5.png>)
 
 ---
 
@@ -488,12 +497,17 @@ $c_f=\text{argmax}\left (\mathop\sum\limits^{\binom{n}{k}}_{i=1}\theta_p(c_{i1},
 ---
 
 <!-- _class: center -->
-## 5. 局限性
+## 5. 局限性与未来工作
 
+**局限性**
 - LSH依赖字符串的语法相似性，而不是语义相似性。
 - 分治步骤的自动化分解依赖few-shot的LLM能力，对超复杂问题泛化性有限。
-- 查询计划CoT需针对不同数据库引擎定制转换规则。
 - 选择代理对模糊问题的处理能力不足。 
+
+**未来工作**
+- 利用思维链提示词工程,或者使用更加复杂的搜索方法,充分利用模型的推理能力
+- 研究如何有效检测歧义性问题
+- 解决当前方法中假设所有问题都可回答的局限性
 
 ---
 
